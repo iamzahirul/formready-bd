@@ -1,0 +1,10 @@
+const assert=require('node:assert/strict');const L=require('./logic.js');
+assert.equal(L.compare(' Zahirul   Islam ','zahirul islam'),'match');
+assert.equal(L.compare('মোঃ জহিরুল','জহিরুল'),'mismatch');
+assert.equal(L.compare('',''),'missing');
+assert.equal(L.compare('Zahirul','জহিরুল'),'mismatch');
+assert.equal(L.validDate('2025-02-30'),false);
+assert.equal(L.validDate('2024-02-29'),true);
+assert.equal(L.validDate('2099-01-01'),false);
+assert.equal(L.validate({version:1}),false);
+console.log('Comparison, missing data, leap date, future date and invalid backup checks passed.');
